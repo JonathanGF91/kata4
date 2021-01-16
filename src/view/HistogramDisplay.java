@@ -3,11 +3,12 @@ package view;
 import java.awt.Dimension;
 import javax.swing.JPanel;
 import org.jfree.ui.ApplicationFrame;
-import org.jfree.chart.ChartFactory;
+import static org.jfree.chart.ChartFactory.createBarChart;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.category.DefaultCategoryDataset;
+import model.Histogram;
 
 public class HistogramDisplay extends ApplicationFrame{
 
@@ -20,7 +21,7 @@ public class HistogramDisplay extends ApplicationFrame{
         this.pack();
     }
     
-    public void Execute(){
+    public void execute(){
         this.setVisible(true);
     }
     
@@ -31,7 +32,7 @@ public class HistogramDisplay extends ApplicationFrame{
     }
     
     private JFreeChart createChart(DefaultCategoryDataset dataSet){
-        JFreeChart chart = ChartFactory.createBarChart("JFREEChart Histogram",
+        JFreeChart chart = createBarChart("JFREEChart Histogram",
                                                         "email domine",
                                                         "nº email",
                                                         dataSet,

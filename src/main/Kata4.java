@@ -10,7 +10,7 @@ import view.MailListReader;
 
 public class Kata4 {
     
-    private static String fileName="email.txt";
+    private static String fileName = "email.txt";
     private static List<Mail> listMail;
     private static Histogram<String> histogram;
 
@@ -21,8 +21,7 @@ public class Kata4 {
     }
     
     private static void input(){
-        listMail = MailListReader.read(fileName);
-        
+        listMail = MailListReader.read(fileName);    
     }
     
     private static void process(){
@@ -30,8 +29,7 @@ public class Kata4 {
     }
     
     private static void output(){
-        HistogramDisplay histoDisplay =new HistogramDisplay(histogram);
+        HistogramDisplay histoDisplay = new HistogramDisplay("Histogram", histogram);
         histoDisplay.execute();
-    }
-    
+    }    
 }

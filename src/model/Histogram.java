@@ -7,10 +7,14 @@ import java.util.Set;
 
 public class Histogram<T> {
     
-    private final Map<T, Integer> map = new HashMap<>();
+    private final Map<T, Integer> map;
+    
+    public Histogram() {
+        this.map = new HashMap<T, Integer>();
+    }
 
     public Integer get (T key){
-            return map.get(key);
+        return map.get(key);
     }
     
     public Set<T> keySet(){
