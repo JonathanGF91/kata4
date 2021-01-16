@@ -1,11 +1,37 @@
 
 package main;
 
-public class Kata4 {
+import java.util.List;
+import model.Histogram;
+import model.Mail;
+import view.HistogramDisplay;
+import view.MailHistogramBuilder;
+import view.MailListReader;
 
+public class Kata4 {
+    
+    private static String fileName="email.txt";
+    private static List<Mail> listMail;
+    private static Histogram<String> histogram;
 
     public static void main(String[] args) {
-        // TODO code application logic here
+        input();
+        process();
+        output();
+    }
+    
+    private static void input(){
+        listMail = MailListReader.read(fileName);
+        
+    }
+    
+    private static void process(){
+        histogram = MailHistogramBuilder.build(listMail);
+    }
+    
+    private static void output(){
+        HistogramDisplay histoDisplay =new HistogramDisplay(histogram);
+        histoDisplay.execute();
     }
     
 }
